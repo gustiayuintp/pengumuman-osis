@@ -30,23 +30,23 @@
       "Jumat": { "pagi": ["Intan"], "siang": ["Zizi"] }
     },
     "minggu_2": {
-      "Senin": { "pagi": ["Farel"], "siang": ["Jasmine"] },
-      "Selasa": { "pagi": ["Syaiful"], "siang": ["Gangga"] },
-      "Rabu": { "pagi": ["Citra"], "siang": ["Nafisah"] },
+      "Senin": { "pagi": ["Farel"], "siang": ["Gangga"] },
+      "Selasa": { "pagi": ["Syaiful"], "siang": ["Jasmine"] },
+      "Rabu": { "pagi": ["Echa"], "siang": ["Nafisah"] },
       "Kamis": { "pagi": ["Anis"], "siang": ["Gabriel"] },
-      "Jumat": { "pagi": ["Echa"], "siang": ["Meisya"] }
+      "Jumat": { "pagi": ["Citra"], "siang": ["Meisya"] }
     },
     "minggu_3": {
-      "Senin": { "pagi": ["Zahwa"], "siang": ["Kiran"] },
+      "Senin": { "pagi": ["Zahwa"], "siang": ["Surya"] },
       "Selasa": { "pagi": ["Damar"], "siang": ["Kevin"] },
       "Rabu": { "pagi": ["Jihan"], "siang": ["Kirana"] },
-      "Kamis": { "pagi": ["Rizky"], "siang": ["Surya"] },
+      "Kamis": { "pagi": ["Rizky"], "siang": ["Kiran"] },
       "Jumat": { "pagi": ["Syaiful"], "siang": ["Sentana"] }
     },
     "minggu_4": {
       "Senin": { "pagi": ["Intan"], "siang": ["Ananda"] },
-      "Selasa": { "pagi": ["Lala"], "siang": ["Krisna"] },
-      "Rabu": { "pagi": ["Citra"], "siang": ["Cindy"] },
+      "Selasa": { "pagi": ["Citra"], "siang": ["Krisna"] },
+      "Rabu": { "pagi": ["Lala"], "siang": ["Cindy"] },
       "Kamis": { "pagi": ["Farel"], "siang": ["Arya"] },
       "Jumat": { "pagi": ["Anis"], "siang": ["Rio"] }
     }
