@@ -77,8 +77,9 @@ function generateFromSchedule() {
         return;
     }
 
-    // Ambil data piket dari JSON
-    const benderaHari = masterJadwal.bendera[hariKey] || {};
+    // Ambil data piket bendera berdasarkan rotasi minggu
+    const benderaMinggu = masterJadwal.bendera[weekKey] || {};
+    const benderaHari = benderaMinggu[hariKey] || {};
     const bPagi = formatNamaWithAt(benderaHari.pagi);
     const bSiang = formatNamaWithAt(benderaHari.siang);
 
@@ -92,12 +93,17 @@ function generateFromSchedule() {
     const pPagi = formatNamaWithAt(polisiHari.pagi);
     const pSore = formatNamaWithAt(polisiHari.siang);
 
-    const template = `📢 *PENGUMUMAN PIKET OSIS – BENDERA & OPERATOR*
+    const polatikMinggu = masterJadwal.polatik ? masterJadwal.polatik[weekKey] || {} : {};
+    const polatikHari = polatikMinggu[hariKey] || {};
+    const poPagi = formatNamaWithAt(polatikHari.pagi);
+    const poSiang = formatNamaWithAt(polatikHari.siang);
+
+    const template = `📢 *PENGUMUMAN PIKET OSIS – BENDERA, OPERATOR, POLISI SEKOLAH & POLATIK*
 
 📅 Hari/Tanggal: ${formatTanggalIndo(date)}
 ☀️ Sesi: *Pagi dan Siang*
 
-Diberitahukan kepada nama-nama yang tercantum di bawah ini untuk melaksanakan piket bendera dan operator pada *sesi Pagi dan Siang*
+Diberitahukan kepada nama-nama yang tercantum di bawah ini untuk melaksanakan tugas piket pada *sesi Pagi dan Siang*
 
 👥 *DAFTAR PETUGAS* 
 
@@ -109,22 +115,29 @@ ${bSiang}
 
 *Operator PAGI*:
 ${oPagi}
+
 *Operator SIANG*:
 ${oSiang}
 
-*Polisi Sekolah PAGI*
+*Polisi Sekolah PAGI*:
 ${pPagi}
 
-*Polisi Sekolah SORE*
+*Polisi Sekolah SORE*:
 ${pSore}
+
+*Polatik PAGI*:
+${poPagi}
+
+*Polatik SIANG*:
+${poSiang}
 
 
 ⚠️ *PERINGATAN:*
 - Wajib hadir tepat waktu sesuai jadwal.
-- Pastikan tugas bendera dan operator sudah dipersiapkan.
+- Pastikan tugas bendera, operator, polisi sekolah, dan polatik sudah dipersiapkan.
 - Jangan meninggalkan tugas tanpa izin.
 - Jika berhalangan hadir, wajib mencari pengganti dan menginformasikan kepada penanggung jawab.
-- Polisi sekolah diwajibkan membawa pdh
+- Polisi sekolah dan polatik diwajibkan membawa PDH.
 
 Mohon dilaksanakan dengan disiplin dan penuh tanggung jawab.
 
@@ -145,94 +158,58 @@ function copyToClipboard() {
 
 // Render Tabel Master Jadwal di Tab Kanan
 function renderTablesMaster() {
-    // Class seragam untuk tabel dan baris
     const tableClass = "w-full text-xs text-left text-slate-700 border-collapse";
     const theadClass = "bg-slate-100 uppercase text-slate-600 font-bold border-b border-slate-200";
-    const trClass = "hover:bg-slate-50 transition-colors h-11 border-b border-slate-200/80"; // h-11 untuk tinggi baris yang konsisten
+    const trClass = "hover:bg-slate-50 transition-colors h-11 border-b border-slate-200/80";
     const tdHariClass = "p-3 font-semibold text-slate-800 w-1/5 align-middle";
     const tdContentClass = "p-3 w-2/5 align-middle";
 
-    // 1. Render Bendera
-    const bBody = document.getElementById('tableBenderaBody');
-    if (bBody && masterJadwal.bendera) {
-        let bHtml = '';
-        for (const [hari, data] of Object.entries(masterJadwal.bendera)) {
-            bHtml += `<tr class="${trClass}">
-                <td class="${tdHariClass}">${hari}</td>
-                <td class="${tdContentClass}">${data.pagi ? data.pagi.join(', ') : '-'}</td>
-                <td class="${tdContentClass}">${data.siang ? data.siang.join(', ') : '-'}</td>
-            </tr>`;
-        }
-        bBody.innerHTML = bHtml;
-    }
+    // Helper fungsi render tabel per minggu
+    const renderWeeklyTables = (containerId, sourceData, badgeBg, badgeText, badgeBorder) => {
+        const container = document.getElementById(containerId);
+        if (container && sourceData) {
+            let html = '';
+            for (let i = 1; i <= 4; i++) {
+                const weekKey = `minggu_${i}`;
+                const weekData = sourceData[weekKey];
+                if (!weekData) continue;
 
-    // 2. Render Operator
-    const opContainer = document.getElementById('containerOperatorTables');
-    if (opContainer && masterJadwal.operator) {
-        let opHtml = '';
-        for (let i = 1; i <= 4; i++) {
-            const weekKey = `minggu_${i}`;
-            const opData = masterJadwal.operator[weekKey];
-            if (!opData) continue;
-
-            opHtml += `<div class="space-y-2">
-                <span class="inline-block px-2.5 py-1 bg-emerald-50 text-emerald-700 font-bold text-xs rounded-md border border-emerald-200">
-                    Minggu ${i}
-                </span>
-                <div class="border border-slate-200 rounded-xl overflow-hidden shadow-xs">
-                    <table class="${tableClass}">
-                        <thead class="${theadClass}">
-                            <tr>
-                                <th class="p-3 w-1/5">Hari</th>
-                                <th class="p-3 w-2/5">Sesi Pagi</th>
-                                <th class="p-3 w-2/5">Sesi Siang</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-200">`;
-            for (const [hari, data] of Object.entries(opData)) {
-                opHtml += `<tr class="${trClass}">
-                    <td class="${tdHariClass}">${hari}</td>
-                    <td class="${tdContentClass}">${data.pagi ? data.pagi.join(', ') : '-'}</td>
-                    <td class="${tdContentClass}">${data.siang ? data.siang.join(', ') : '-'}</td>
-                </tr>`;
+                html += `<div class="space-y-2">
+                    <span class="inline-block px-2.5 py-1 ${badgeBg} ${badgeText} font-bold text-xs rounded-md border ${badgeBorder}">
+                        Minggu ${i}
+                    </span>
+                    <div class="border border-slate-200 rounded-xl overflow-hidden shadow-xs">
+                        <table class="${tableClass}">
+                            <thead class="${theadClass}">
+                                <tr>
+                                    <th class="p-3 w-1/5">Hari</th>
+                                    <th class="p-3 w-2/5">Sesi Pagi</th>
+                                    <th class="p-3 w-2/5">Sesi Siang</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">`;
+                for (const [hari, data] of Object.entries(weekData)) {
+                    html += `<tr class="${trClass}">
+                        <td class="${tdHariClass}">${hari}</td>
+                        <td class="${tdContentClass}">${data.pagi ? data.pagi.join(', ') : '-'}</td>
+                        <td class="${tdContentClass}">${data.siang ? data.siang.join(', ') : '-'}</td>
+                    </tr>`;
+                }
+                html += `</tbody></table></div></div>`;
             }
-            opHtml += `</tbody></table></div></div>`;
+            container.innerHTML = html;
         }
-        opContainer.innerHTML = opHtml;
-    }
+    };
 
-    // 3. Render Polisi Sekolah
-    const psContainer = document.getElementById('containerPolisiTables');
-    if (psContainer && masterJadwal.polisi_sekolah) {
-        let psHtml = '';
-        for (let i = 1; i <= 4; i++) {
-            const weekKey = `minggu_${i}`;
-            const psData = masterJadwal.polisi_sekolah[weekKey];
-            if (!psData) continue;
+    // 1. Render Bendera (4 Minggu)
+    renderWeeklyTables('containerBenderaTables', masterJadwal.bendera, 'bg-blue-50', 'text-blue-700', 'border-blue-200');
 
-            psHtml += `<div class="space-y-2">
-                <span class="inline-block px-2.5 py-1 bg-rose-50 text-rose-700 font-bold text-xs rounded-md border border-rose-200">
-                    Minggu ${i}
-                </span>
-                <div class="border border-slate-200 rounded-xl overflow-hidden shadow-xs">
-                    <table class="${tableClass}">
-                        <thead class="${theadClass}">
-                            <tr>
-                                <th class="p-3 w-1/5">Hari</th>
-                                <th class="p-3 w-2/5">Sesi Pagi</th>
-                                <th class="p-3 w-2/5">Sesi Siang/Sore</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-slate-200">`;
-            for (const [hari, data] of Object.entries(psData)) {
-                psHtml += `<tr class="${trClass}">
-                    <td class="${tdHariClass}">${hari}</td>
-                    <td class="${tdContentClass}">${data.pagi ? data.pagi.join(', ') : '-'}</td>
-                    <td class="${tdContentClass}">${data.siang ? data.siang.join(', ') : '-'}</td>
-                </tr>`;
-            }
-            psHtml += `</tbody></table></div></div>`;
-        }
-        psContainer.innerHTML = psHtml;
-    }
+    // 2. Render Operator (4 Minggu)
+    renderWeeklyTables('containerOperatorTables', masterJadwal.operator, 'bg-emerald-50', 'text-emerald-700', 'border-emerald-200');
+
+    // 3. Render Polisi Sekolah (4 Minggu)
+    renderWeeklyTables('containerPolisiTables', masterJadwal.polisi_sekolah, 'bg-rose-50', 'text-rose-700', 'border-rose-200');
+
+    // 4. Render Polatik (4 Minggu)
+    renderWeeklyTables('containerPolatikTables', masterJadwal.polatik, 'bg-amber-50', 'text-amber-700', 'border-amber-200');
 }

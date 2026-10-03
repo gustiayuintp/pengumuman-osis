@@ -1,84 +1,122 @@
 {
   "bendera": {
-    "Senin": {
-      "pagi": ["Syaiful", "Echa"],
-      "siang": ["Krisna", "Rio", "Andaru", "Nafisah"]
+    "minggu_1": {
+      "Senin": { "pagi": ["Damar", "Risky"], "siang": ["Rio", "Gangga"] },
+      "Selasa": { "pagi": ["Farel", "Syaiful"], "siang": ["Surya", "Gabriel"] },
+      "Rabu": { "pagi": ["Jihan", "Intan"], "siang": ["Kevin", "Krisna"] },
+      "Kamis": { "pagi": ["Echa", "Arsyla"], "siang": ["Sentana", "Aryok"] },
+      "Jumat": { "pagi": ["Zahwa", "Citra"], "siang": ["Hoshi", "Nana"] }
     },
-    "Selasa": {
-      "pagi": ["Jihan", "Damar"],
-      "siang": ["Kirana", "Arya", "Gangga", "Kevin"]
+    "minggu_2": {
+      "Senin": { "pagi": ["Anisa", "Syaiful"], "siang": ["Jasmine", "Kiran"] },
+      "Selasa": { "pagi": ["Damar", "Farel"], "siang": ["Aeera", "Zizi"] },
+      "Rabu": { "pagi": ["Risky", "Jihan"], "siang": ["Cindy", "Kenina"] },
+      "Kamis": { "pagi": ["Zahwa", "Citra"], "siang": ["Meisya", "Dellta"] },
+      "Jumat": { "pagi": ["Echa", "Arsyla"], "siang": ["Nafisah", "Surya"] }
     },
-    "Rabu": {
-      "pagi": ["Rizky", "Lala"],
-      "siang": ["Jasmine", "Kenina", "Sentana", "Meisya"]
+    "minggu_3": {
+      "Senin": { "pagi": ["Jihan", "Intan"], "siang": ["Gabriel", "Kevin"] },
+      "Selasa": { "pagi": ["Anisa", "Risky"], "siang": ["Krisna", "Sentana"] },
+      "Rabu": { "pagi": ["Echa", "Arsyla"], "siang": ["Aryok", "Hoshi"] },
+      "Kamis": { "pagi": ["Damar", "Zahwa"], "siang": ["Nana", "Rio"] },
+      "Jumat": { "pagi": ["Farel", "Citra"], "siang": ["Gangga", "Jasmine"] }
     },
-    "Kamis": {
-      "pagi": ["Zahwa", "Anisa"],
-      "siang": ["Aeera", "Zizi", "Surya", "Lutfia"]
-    },
-    "Jumat": {
-      "pagi": ["Farel", "Intan", "Citra"],
-      "siang": ["Ananda", "Delta", "Cindy"]
+    "minggu_4": {
+      "Senin": { "pagi": ["Citra", "Anisa"], "siang": ["Kiran", "Aeera"] },
+      "Selasa": { "pagi": ["Echa", "Syaiful"], "siang": ["Zizi", "Cindy"] },
+      "Rabu": { "pagi": ["Jihan", "Farel"], "siang": ["Kenina", "Meisya"] },
+      "Kamis": { "pagi": ["Echa", "Intan"], "siang": ["Dellta", "Nafisah"] },
+      "Jumat": { "pagi": ["Arsyla", "Intan"], "siang": ["Surya", "Hoshi"] }
     }
   },
   "operator": {
     "minggu_1": {
-      "Senin": { "pagi": ["Lala"], "siang": ["Rio"] },
-      "Selasa": { "pagi": ["Rizky"], "siang": ["Rara"] },
-      "Rabu": { "pagi": ["Jihan"], "siang": ["Kenina"] },
-      "Kamis": { "pagi": ["Damar"], "siang": ["Delta"] },
-      "Jumat": { "pagi": ["Intan"], "siang": ["Zizi"] }
+      "Senin": { "pagi": ["Intan"], "siang": ["Hoshi"] },
+      "Selasa": { "pagi": ["Jihan"], "siang": ["Nana"] },
+      "Rabu": { "pagi": ["Syaiful"], "siang": ["Aryok"] },
+      "Kamis": { "pagi": ["Arsyla"], "siang": ["Meisya"] },
+      "Jumat": { "pagi": ["Farel"], "siang": ["Dellta"] }
     },
     "minggu_2": {
-      "Senin": { "pagi": ["Farel"], "siang": ["Gangga"] },
-      "Selasa": { "pagi": ["Syaiful"], "siang": ["Jasmine"] },
-      "Rabu": { "pagi": ["Echa"], "siang": ["Nafisah"] },
-      "Kamis": { "pagi": ["Anis"], "siang": ["Gabriel"] },
-      "Jumat": { "pagi": ["Citra"], "siang": ["Meisya"] }
+      "Senin": { "pagi": ["Citra"], "siang": ["Surya"] },
+      "Selasa": { "pagi": ["Zahwa"], "siang": ["Kenina"] },
+      "Rabu": { "pagi": ["Anisa"], "siang": ["Gabriel"] },
+      "Kamis": { "pagi": ["Farel"], "siang": ["Cindy"] },
+      "Jumat": { "pagi": ["Syaiful"], "siang": ["Nafisah"] }
     },
     "minggu_3": {
-      "Senin": { "pagi": ["Zahwa"], "siang": ["Surya"] },
-      "Selasa": { "pagi": ["Damar"], "siang": ["Kevin"] },
-      "Rabu": { "pagi": ["Jihan"], "siang": ["Kirana"] },
-      "Kamis": { "pagi": ["Rizky"], "siang": ["Kiran"] },
-      "Jumat": { "pagi": ["Syaiful"], "siang": ["Sentana"] }
+      "Senin": { "pagi": ["Anisa"], "siang": ["Kiran"] },
+      "Selasa": { "pagi": ["Risky"], "siang": ["Aeera"] },
+      "Rabu": { "pagi": ["Intan"], "siang": ["Zizi"] },
+      "Kamis": { "pagi": ["Citra"], "siang": ["Jasmine"] },
+      "Jumat": { "pagi": ["Jihan"], "siang": ["Rio"] }
     },
     "minggu_4": {
-      "Senin": { "pagi": ["Intan"], "siang": ["Ananda"] },
-      "Selasa": { "pagi": ["Citra"], "siang": ["Krisna"] },
-      "Rabu": { "pagi": ["Lala"], "siang": ["Cindy"] },
-      "Kamis": { "pagi": ["Farel"], "siang": ["Arya"] },
-      "Jumat": { "pagi": ["Anis"], "siang": ["Rio"] }
+      "Senin": { "pagi": ["Zahwa"], "siang": ["Sentana"] },
+      "Selasa": { "pagi": ["Risky"], "siang": ["Krisna"] },
+      "Rabu": { "pagi": ["Damar"], "siang": ["Kevin"] },
+      "Kamis": { "pagi": ["Zahwa"], "siang": ["Gangga"] },
+      "Jumat": { "pagi": ["Zahwa"], "siang": ["Kenina"] }
     }
   },
   "polisi_sekolah": {
     "minggu_1": {
-      "Senin": { "pagi": ["Syaiful", "Farel"], "siang": ["Kirana", "Aeera", "Kiran"] },
-      "Selasa": { "pagi": ["Zahwa", "Echa"], "siang": ["Sentana", "Cindy", "Kenina"] },
-      "Rabu": { "pagi": ["Risky", "Damar"], "siang": ["Gangga", "Nafisah", "Delta"] },
-      "Kamis": { "pagi": ["Citra", "Lala"], "siang": ["Nanda", "Gabriel", "Meisya"] },
-      "Jumat": { "pagi": ["Anisa", "Jihan"], "siang": ["Arya", "Kevin", "Surya"] }
+      "Senin": { "pagi": ["Anisa", "Syaiful"], "siang": ["Kiran", "Aeera", "Surya"] },
+      "Selasa": { "pagi": ["Zahwa", "Echa"], "siang": ["Sentana", "Cindy", "Hoshi"] },
+      "Rabu": { "pagi": ["Farel", "Arsyla"], "siang": ["Gangga", "Nafisah", "Jasmine"] },
+      "Kamis": { "pagi": ["Citra", "Damar"], "siang": ["Nana", "Gabriel", "Rio"] },
+      "Jumat": { "pagi": ["Anisa", "Jihan"], "siang": ["Aryok", "Kevin", "Krisna"] }
     },
     "minggu_2": {
-      "Senin": { "pagi": ["Damar", "Zahwa"], "siang": ["Surya", "Krisna", "Jasmine"] },
-      "Selasa": { "pagi": ["Risky", "Jihan"], "siang": ["Nanda", "Zizi", "Arya"] },
-      "Rabu": { "pagi": ["Anisa", "Citra"], "siang": ["Kevin", "Krisna", "Jasmine"] },
-      "Kamis": { "pagi": ["Echa", "Lala"], "siang": ["Nafisah", "Cindy", "Rio"] },
-      "Jumat": { "pagi": ["Farel", "Syaiful"], "siang": ["Delta", "Kiran", "Gangga"] }
+      "Senin": { "pagi": ["Damar", "Zahwa"], "siang": ["Surya", "Krisna", "Hoshi"] },
+      "Selasa": { "pagi": ["Risky", "Jihan"], "siang": ["Kenina", "Zizi", "Jasmine"] },
+      "Rabu": { "pagi": ["Echa", "Citra"], "siang": ["Kevin", "Jasmine", "Nana"] },
+      "Kamis": { "pagi": ["Anisa", "Arsyla"], "siang": ["Meisya", "Dellta", "Rio"] },
+      "Jumat": { "pagi": ["Farel", "Syaiful"], "siang": ["Kenina", "Rio", "Gangga"] }
     },
     "minggu_3": {
-      "Senin": { "pagi": ["Syaiful", "Farel"], "siang": ["Kirana", "Aeera", "Kiran"] },
-      "Selasa": { "pagi": ["Zahwa", "Echa"], "siang": ["Sentana", "Cindy", "Kenina"] },
-      "Rabu": { "pagi": ["Risky", "Damar"], "siang": ["Gangga", "Nafisah", "Delta"] },
-      "Kamis": { "pagi": ["Citra", "Lala"], "siang": ["Nanda", "Gabriel", "Meisya"] },
-      "Jumat": { "pagi": ["Anisa", "Jihan"], "siang": ["Arya", "Kevin", "Surya"] }
+      "Senin": { "pagi": ["Syaiful", "Farel"], "siang": ["Kiran", "Aeera", "Gabriel"] },
+      "Selasa": { "pagi": ["Zahwa", "Echa"], "siang": ["Sentana", "Cindy", "Kevin"] },
+      "Rabu": { "pagi": ["Risky", "Damar"], "siang": ["Gangga", "Nafisah", "Krisna"] },
+      "Kamis": { "pagi": ["Anisa", "Arsyla"], "siang": ["Nana", "Gabriel", "Sentana"] },
+      "Jumat": { "pagi": ["Farel", "Jihan"], "siang": ["Aryok", "Surya", "Zizi"] }
     },
     "minggu_4": {
-      "Senin": { "pagi": ["Damar", "Zahwa"], "siang": ["Surya", "Krisna", "Jasmine"] },
-      "Selasa": { "pagi": ["Risky", "Jihan"], "siang": ["Nanda", "Zizi", "Arya"] },
-      "Rabu": { "pagi": ["Anisa", "Citra"], "siang": ["Kevin", "Krisna", "Jasmine"] },
-      "Kamis": { "pagi": ["Echa", "Lala"], "siang": ["Nafisah", "Cindy", "Rio"] },
-      "Jumat": { "pagi": ["Farel", "Syaiful"], "siang": ["Delta", "Kiran", "Gangga"] }
+      "Senin": { "pagi": ["Anisa", "Zahwa"], "siang": ["Surya", "Krisna", "Sentana"] },
+      "Selasa": { "pagi": ["Risky", "Jihan"], "siang": ["Hoshi", "Zizi", "Aryok"] },
+      "Rabu": { "pagi": ["Echa", "Citra"], "siang": ["Kiran", "Aeera", "Cindy"] },
+      "Kamis": { "pagi": ["Syaiful", "Arsyla"], "siang": ["Meisya", "Dellta", "Nafisah"] },
+      "Jumat": { "pagi": ["Farel", "Damar"], "siang": ["Kenina", "Rio", "Dellta"] }
+    }
+  },
+  "polatik": {
+    "minggu_1": {
+      "Senin": { "pagi": ["Echa", "Arsyla", "Farel", "Damar"], "siang": ["Nana", "Rio", "Gangga", "Cindy"] },
+      "Selasa": { "pagi": ["Anisa", "Citra", "Syaiful", "Damar"], "siang": ["Krisna", "Jasmine", "Meisya", "Nafisah"] },
+      "Rabu": { "pagi": ["Farel", "Damar", "Jihan", "Citra"], "siang": ["Kenina", "Sentana", "Aryok", "Dellta"] },
+      "Kamis": { "pagi": ["Zahwa", "Risky", "Anisa", "Syaiful"], "siang": ["Kiran", "Hoshi", "Aeera", "Kevin"] },
+      "Jumat": { "pagi": ["Syaiful", "Jihan", "Echa", "Arsyla"], "siang": ["Dellta", "Zizi", "Cindy", "Surya"] }
+    },
+    "minggu_2": {
+      "Senin": { "pagi": ["Jihan", "Zahwa", "Damar", "Farel"], "siang": ["Aeera", "Meisya", "Nafisah", "Gangga"] },
+      "Selasa": { "pagi": ["Syaiful", "Citra", "Risky", "Anisa"], "siang": ["Krisna", "Surya", "Sentana", "Dellta"] },
+      "Rabu": { "pagi": ["Echa", "Arsyla", "Damar", "Citra"], "siang": ["Aryok", "Meisya", "Zizi", "Kiran"] },
+      "Kamis": { "pagi": ["Damar", "Risky", "Farel", "Zahwa"], "siang": ["Cindy", "Kiran", "Kenina", "Gangga"] },
+      "Jumat": { "pagi": ["Farel", "Anisa", "Echa", "Arsyla"], "siang": ["Nafisah", "Dellta", "Hoshi", "Jasmine"] }
+    },
+    "minggu_3": {
+      "Senin": { "pagi": ["Echa", "Arsyla", "Damar", "Citra"], "siang": ["Nana", "Sentana", "Aryok", "Kevin"] },
+      "Selasa": { "pagi": ["Risky", "Farel", "Jihan", "Damar"], "siang": ["Rio", "Krisna", "Jasmine", "Nafisah"] },
+      "Rabu": { "pagi": ["Zahwa", "Anisa", "Echa", "Arsyla"], "siang": ["Cindy", "Kevin", "Aeera", "Meisya"] },
+      "Kamis": { "pagi": ["Syaiful", "Citra", "Farel", "Risky"], "siang": ["Dellta", "Zizi", "Meisya", "Kiran"] },
+      "Jumat": { "pagi": ["Damar", "Jihan", "Anisa", "Zahwa"], "siang": ["Jasmine", "Rio", "Kiran", "Kenina"] }
+    },
+    "minggu_4": {
+      "Senin": { "pagi": ["Jihan", "Damar", "Echa", "Arsyla"], "siang": ["Meisya", "Gabriel", "Nana", "Kevin"] },
+      "Selasa": { "pagi": ["Anisa", "Echa", "Arsyla", "Citra"], "siang": ["Gangga", "Aeera", "Krisna", "Kenina"] },
+      "Rabu": { "pagi": ["Arsyla", "Echa", "Risky", "Zahwa"], "siang": ["Surya", "Kevin", "Aryok", "Dellta"] },
+      "Kamis": { "pagi": ["Citra", "Risky", "Jihan", "Damar"], "siang": ["Hoshi", "Cindy", "Kenina", "Rio"] },
+      "Jumat": { "pagi": ["Farel", "Zahwa", "Syaiful", "Anisa"], "siang": ["Kevin", "Gabriel", "Jasmine", "Aeera"] }
     }
   }
 }

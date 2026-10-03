@@ -111,7 +111,7 @@
                             </button>
                         </div>
 
-                        <!-- PREVIEW BOX INTERFACE MODERN -->
+                        <!-- PREVIEW BOX -->
                         <div class="preview-container rounded-2xl p-6 text-slate-800 text-sm whitespace-pre-wrap leading-relaxed min-h-[460px] max-h-[600px] overflow-y-auto" id="previewText">
                             Memuat data jadwal...
                         </div>
@@ -130,20 +130,9 @@
                         <!-- Tabel Master 1: Petugas Bendera -->
                         <div class="space-y-3">
                             <div class="text-slate-900 font-bold text-sm">
-                                1. Jadwal Petugas Bendera (Rutin Harian)
+                                1. Jadwal Petugas Bendera (Rotasi 4 Minggu)
                             </div>
-                            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-xs">
-                                <table class="w-full text-xs text-left text-slate-700">
-                                    <thead class="bg-slate-100 uppercase text-slate-600 font-bold border-b border-slate-200">
-                                        <tr>
-                                            <th class="p-3 w-1/5">Hari</th>
-                                            <th class="p-3 w-2/5">Penaikan Sesi PAGI (Kelas XI)</th>
-                                            <th class="p-3 w-2/5">Penurunan Sesi SIANG (Kelas X)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tableBenderaBody" class="divide-y divide-slate-200"></tbody>
-                                </table>
-                            </div>
+                            <div id="containerBenderaTables" class="space-y-4"></div>
                         </div>
 
                         <!-- Tabel Master 2: Operator -->
@@ -162,8 +151,15 @@
                             <div id="containerPolisiTables" class="space-y-4"></div>
                         </div>
 
-                    </div>
+                        <!-- Tabel Master 4: Polatik -->
+                        <div class="space-y-3">
+                            <div class="text-slate-900 font-bold text-sm">
+                                4. Jadwal Polatik (Rotasi 4 Minggu)
+                            </div>
+                            <div id="containerPolatikTables" class="space-y-4"></div>
+                        </div>
 
+                    </div>
                 </div>
             </div>
 
@@ -172,10 +168,8 @@
 
     <!-- HELPER SCRIPT UNTUK LUCIDE & TAB SWITCH -->
     <script>
-        // Inisialisasi ikon Lucide
         lucide.createIcons();
 
-        // Fungsi Switch Tab
         function switchTab(tabName) {
             const panePreview = document.getElementById('panePreview');
             const paneJadwal = document.getElementById('paneJadwal');
